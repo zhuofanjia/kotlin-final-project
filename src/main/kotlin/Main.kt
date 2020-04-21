@@ -61,7 +61,7 @@ fun Application.adder() {
                     "divide" -> request.first / request.second
                     else -> throw Exception("${request.operation} is not supported")
                 }
-                var response = Result(request.operation, request.first, request.second, result)
+                val response = Result(request.operation, request.first, request.second, result)
                 call.respond(response)
             } catch (e: Exception) {
                 call.respond(HttpStatusCode.BadRequest)
@@ -97,6 +97,10 @@ fun Application.showInfo() {
 
         get("/uiuc") {
             call.respondRedirect("https://covid19.illinois.edu/")
+        }
+
+        get("/champaign") {
+            call.respondRedirect("https://www.c-uphd.org/champaign-urbana-illinois-coronavirus-information.html")
         }
     }
 }

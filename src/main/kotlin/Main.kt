@@ -6,26 +6,14 @@ import io.ktor.gson.gson
 import io.ktor.http.HttpStatusCode
 import io.ktor.request.receive
 import io.ktor.response.respond
+import io.ktor.response.respondRedirect
 import io.ktor.response.respondText
 import io.ktor.routing.get
 import io.ktor.routing.post
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
-
-//fun main(args: Array<String>) {
-//    val server = embeddedServer(Netty, port = 8080) {
-//        routing {
-//            get("/") {
-//                call.respondText("Hello World!", ContentType.Text.Plain)
-//            }
-//            get("/demo") {
-//                call.respondText("HELLO WORLD!")
-//            }
-//        }
-//    }
-//    server.start(wait = true)
-//}
+import java.net.URL
 
 fun hello(): String {
     return "Hello World!"
@@ -46,7 +34,7 @@ data class CalculatorRequest(
     }
 }
 
-
+val url = URL("https://covid19.illinois.edu/")
 
 fun Application.adder() {
     val counts: MutableMap<String, Int> = mutableMapOf()
@@ -98,18 +86,21 @@ fun Application.adder() {
                 call.respond(HttpStatusCode.BadRequest, e)
             }
         }
-        get("/show/{first}") {
-            try {
-                val url = "https://covid19.illinois.edu/";
-                println(url)
-                //println(call.parameters["first"] + ": $url")
-                call.respondText(url)
-            } catch (e: Exception) {
-                call.respond(HttpStatusCode.BadRequest, e)
-            }
+    }
+}
+
+fun Application.showInfo() {
+    routing {
+        get("/real time cases") {
+            call.respondRedirect("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
+        }
+
+        get("/uiuc") {
+            call.respondRedirect("https://covid19.illinois.edu/")
         }
     }
 }
 fun main() {
-    embeddedServer(Netty, 8080, module = Application::adder).start(wait = true)
+    embeddedServer(Netty, 8080, module = Application::showInfo).start(wait = true)
+    //embeddedServer(Netty, 8080, module = Application::adder).start(wait = true)
 }

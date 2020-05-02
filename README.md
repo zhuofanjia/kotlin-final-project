@@ -23,6 +23,7 @@ unrelated to each other. Our goal is to make it more convenient for people to fo
 information about Covid-19 updated everyday.
 
 **What we did**
+
 We first collected the link of three websites that I check everyday to get information of Covid-19
 : the real-time data of cases in the US by JHU, the real-time data of cases in Champaign, and the 
 website of Covid-19 created by UIUC. Then we implemented Ktor into our code and it can help us get
@@ -32,4 +33,5 @@ website of Covid-19 created by UIUC. Then we implemented Ktor into our code and 
   would be also easy to add more keywords and website links. 
 
 **Method Requirement**
+
 Ktor

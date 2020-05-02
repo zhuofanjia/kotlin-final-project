@@ -9,8 +9,11 @@ Course: CS 199 IKP - Spring 2020
 
 The goal of our project is to create a website by ktor and kotlin to share information about COVID-19. 
 * The real-time data of cases in US by JHU
+[real time website.](https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
 * The real-time data of cases in Champaign
+[champaign cases website.](https://www.c-uphd.org/champaign-urbana-illinois-coronavirus-information.html)
 * The link to COVID-19 website of UIUC
+[uiuc covid info website.](https://covid19.illinois.edu/)
 ...
 
 **Background**

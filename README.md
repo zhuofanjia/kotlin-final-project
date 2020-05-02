@@ -14,7 +14,9 @@ The goal of our project is to create a website by ktor and kotlin to share infor
 [champaign cases website.](https://www.c-uphd.org/champaign-urbana-illinois-coronavirus-information.html)
 * The link to COVID-19 website of UIUC
 [uiuc covid info website.](https://covid19.illinois.edu/)
+
 ...
+
 
 **Background**
 
@@ -24,6 +26,7 @@ preventing Covid-19. The government and our university also implement new polici
 information about covid-19 on their website. However, these websites are always separated and 
 unrelated to each other. Our goal is to make it more convenient for people to follow up the 
 information about Covid-19 updated everyday.
+
 
 **What we did**
 
@@ -37,4 +40,4 @@ website of Covid-19 created by UIUC. Then we implemented Ktor into our code and 
 
 **Method Requirement**
 
-Ktor
+* Ktor
